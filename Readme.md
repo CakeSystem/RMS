@@ -16,7 +16,7 @@ bash <(curl -s -L https://raw.githubusercontent.com/CakeSystem/RMS/main/install.
 #### 线路2:
 
 ```sh
-bash <(curl -s -L -k https://raw.njuu.cf/CakeSystem/RMS/main/install.sh)
+bash <(curl -s -L https://cdn.jsdelivr.net/CakeSystem/RMS/main/install.sh)
 ```
 
 #### 线路3:
@@ -29,6 +29,11 @@ bash <(curl -s -L -k https://raw.yzuu.cf/CakeSystem/RMS/main/install.sh)
 
 ```sh
 bash <(curl -s -L -k https://raw.nuaa.cf/CakeSystem/RMS/main/install.sh)
+```
+#### 线路5:
+
+```sh
+bash <(curl -s -L -k https://raw.njuu.cf/CakeSystem/RMS/main/install.sh)
 ```
 
 # WINDOWS安装
