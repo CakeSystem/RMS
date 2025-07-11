@@ -2,18 +2,26 @@
 
 <img src="/RMS.png" alt="Logo">
 
-## 全新 RMS2 发布
+## 全新 CakeMiner3 发布
+CakeMiner3 相较于 CakeMiner 1、2 实现了全方位提升：
 
-RMS2 相较于 RMS1 实现了全方位提升：
+- 压缩性能大幅升级：公网数据流量体积压缩可达1000% - 2000%, 约10-20倍的体积压缩。
+- 带宽优化：显著节约公网带宽，大幅提升在低带宽或网络质量较差环境下的表现。
+- 兼容性要求：需配合 CakeSystem 服务端 v4.5.0 及以上版本，即可启用 CakeMiner3 协议。
+- 重要提醒：请 CakeMiner1、2 用户尽快切换至 CakeMiner3。CakeMiner 1、2 在稳定性和效率上已全面落后于 CakeMiner3, 并且CakeMiner 3不再兼容CakeMiner 1、2。
+
+## 全新 CakeMiner2 发布
+
+CakeMiner 2 相较于 CakeMiner1 实现了全方位提升：
 - 压缩性能升级：不仅压缩公网连接，还能压缩数据体积，压缩率高达 30%-50%，同时 CPU 占用仅提升约 10%。
 - 带宽优化：显著节约公网带宽，大幅提升在低带宽或网络质量较差环境下的表现。
-- 兼容性要求：需配合 CakeSystem 服务端 v4.3.0 及以上版本，即可启用 RMS2 协议。
+- 兼容性要求：需配合 CakeSystem 服务端 v4.3.0 及以上版本，即可启用 RCakeMiner2 协议。
 
-重要提醒：请 RMS1 用户尽快切换至 RMS2。RMS1 在稳定性和效率上已全面落后于 RMS2。
+重要提醒：请 CakeMiner 1 用户尽快切换至 CakeMiner2。CakeMiner1 在稳定性和效率上已全面落后于 CakeMiner2。
 
-## 关于 RMS 客户端
+## 关于 CakeMiner 客户端
 
-RMS 安全客户端具备以下特点：
+CakeMiner  安全客户端具备以下特点：
 - 压缩连接数和数据，显著提高传输速度。
 - 高安全性：防止中间人攻击和伪造请求。
 - 多平台支持：
@@ -22,12 +30,12 @@ RMS 安全客户端具备以下特点：
   - Windows（图形化界面与命令行版本）
 
 ### 常见问题解答：
-- [如何安装 RMS？](#安装指南)
+- [如何安装 CakeMiner ？](#安装指南)
 - [Windows 图形界面版本白屏如何解决？](#windows-图形界面版本白屏)
 - [什么是连接池模式？](#什么是连接池模式)
 - [如何更改默认网页访问端口？](#如何更改默认网页访问端口)
-- [如何设置 RMS 访问账号密码？](#如何设置-rms-访问账号密码)
-- [如何配置 RMS 一对多服务器？](#我想-rms-一对多服务器如何使用)
+- [如何设置 CakeMiner 访问账号密码？](#如何设置-CakeMiner-访问账号密码)
+- [如何配置 CakeMiner 一对多服务器？](#我想-CakeMiner-一对多服务器如何使用)
 
 # 安装指南
 
@@ -73,11 +81,11 @@ wget -N https://rustminersystem.com/install.sh; chmod +x ./install.sh; ./install
 # 使用指南
 
 ### 如何使用？
-1. 安装完成后，使用浏览器访问安装 RMS 客户端设备的 IP 地址（如 http://设备IP:42703）。
+1. 安装完成后，使用浏览器访问安装 CakeMiner 客户端设备的 IP 地址（如 http://设备IP:42703）。
 2. 进入网页后，填写推送地址即可。
 
 建议：
-- 请固定 RMS 安装设备的局域网 IP 地址。如果路由器使用 DHCP 动态分配 IP，可能导致设备重启后 IP 发生变化。
+- 请固定 CakeMiner 安装设备的局域网 IP 地址。如果路由器使用 DHCP 动态分配 IP，可能导致设备重启后 IP 发生变化。
 
 # 常见问题解答
 
@@ -87,7 +95,7 @@ wget -N https://rustminersystem.com/install.sh; chmod +x ./install.sh; ./install
 
 ### 什么是连接池模式？
 
-连接池模式是 RMS 的一项优化功能，可压缩 RMS 客户端至 CakeSystem 服务器的公网 TCP 连接数。
+连接池模式是 CakeMiner 的一项优化功能，可压缩 CakeMiner 客户端至 CakeSystem 服务器的公网 TCP 连接数。
 
 - 开启条件：需要 CakeSystem 服务端 v3.8.0 及以上版本。
 - 功能特点：并非简单地将矿机合并为一台设备，而是压缩中间公网 TCP 连接数量。矿池内矿机数量保持不变。
@@ -95,21 +103,21 @@ wget -N https://rustminersystem.com/install.sh; chmod +x ./install.sh; ./install
 压缩率计算公式：
 「压缩率 = 接入矿机数量 / 最大连接数」
 建议：
-- 压缩率不要过高。通常 3-5 倍压缩率较为理想，具体配置需视 RMS 设备和服务器性能而定。
+- 压缩率不要过高。通常 3-5 倍压缩率较为理想，具体配置需视 CakeMiner 设备和服务器性能而定。
 
 ### 如何更改默认网页访问端口？
 
-1. 打开非图形界面版本的 RMS 安装目录。
-2. 修改 rms.conf 文件中的 PORT 配置项为所需端口。
+1. 打开非图形界面版本的 CakeMiner 安装目录。
+2. 修改 local.conf 文件中的 PORT 配置项为所需端口。
 3. 保存后重启程序即可生效。
 
-### 如何设置 RMS 访问账号密码？
+### 如何设置 CakeMiner 访问账号密码？
 
 1. 在网页右上角，进入 设置 菜单。
 2. 选择 设置用户名密码 进行配置。
 
-### 我想 RMS 一对多服务器如何使用？
+### 我想 CakeMiner 一对多服务器如何使用？
 
-RMS 提供手动添加服务器功能：
-1. 在 RMS 客户端内，选择 手动添加。
+CakeMiner 提供手动添加服务器功能：
+1. 在 CakeMiner 客户端内，选择 手动添加。
 2. 按提示输入远程服务器地址即可完成配置。
