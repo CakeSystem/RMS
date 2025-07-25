@@ -1,6 +1,6 @@
 # CakeMiner 使用指南
 
-<img src="/RMS.png" alt="Logo">
+<img src="/CakeMiner.png" alt="Logo">
 
 ## 全新 CakeMiner3 发布
 CakeMiner3 相较于 CakeMiner 1、2 实现了全方位提升：
