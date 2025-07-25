@@ -28,12 +28,12 @@ else
     fi
 fi
 
-SERVICE_NAME="rmservice"
+SERVICE_NAME="CakeMinerervice"
 
-PATH_RMS="/root/rms"
-PATH_EXEC="rms"
-PATH_NOHUP="${PATH_RMS}/nohup.out"
-PATH_ERR="${PATH_RMS}/err.log"
+PATH_CakeMiner="/root/CakeMiner"
+PATH_EXEC="CakeMiner"
+PATH_NOHUP="${PATH_CakeMiner}/nohup.out"
+PATH_ERR="${PATH_CakeMiner}/err.log"
 
 ROUTE_1="https://github.com"
 ROUTE_2="http://rustminersystem.com"
@@ -41,15 +41,15 @@ ROUTE_2="http://rustminersystem.com"
 # ROUTE_3="https://hub.yzuu.cf"
 # ROUTE_4="https://hub.nuaa.cf"
 
-ROUTE_EXEC_1="/CakeSystem/RMS/raw/main/x86_64-musl/rms"
-ROUTE_EXEC_2="/CakeSystem/RMS/raw/main/x86_64-android/rms"
-ROUTE_EXEC_3="/CakeSystem/RMS/raw/main/arm-musleabi/rms"
-ROUTE_EXEC_4="/CakeSystem/RMS/raw/main/arm-musleabihf/rms"
-ROUTE_EXEC_5="/CakeSystem/RMS/raw/main/armv7-musleabi/rms"
-ROUTE_EXEC_6="/CakeSystem/RMS/raw/main/armv7-musleabihf/rms"
-ROUTE_EXEC_7="/CakeSystem/RMS/raw/main/i586-musl/rms"
-ROUTE_EXEC_8="/CakeSystem/RMS/raw/main/i686-android/rms"
-ROUTE_EXEC_9="/CakeSystem/RMS/raw/main/aarch64-musl/rms"
+ROUTE_EXEC_1="/CakeSystem/CakeMiner/raw/main/x86_64-musl/CakeMiner"
+ROUTE_EXEC_2="/CakeSystem/CakeMiner/raw/main/x86_64-android/CakeMiner"
+ROUTE_EXEC_3="/CakeSystem/CakeMiner/raw/main/arm-musleabi/CakeMiner"
+ROUTE_EXEC_4="/CakeSystem/CakeMiner/raw/main/arm-musleabihf/CakeMiner"
+ROUTE_EXEC_5="/CakeSystem/CakeMiner/raw/main/armv7-musleabi/CakeMiner"
+ROUTE_EXEC_6="/CakeSystem/CakeMiner/raw/main/armv7-musleabihf/CakeMiner"
+ROUTE_EXEC_7="/CakeSystem/CakeMiner/raw/main/i586-musl/CakeMiner"
+ROUTE_EXEC_8="/CakeSystem/CakeMiner/raw/main/i686-android/CakeMiner"
+ROUTE_EXEC_9="/CakeSystem/CakeMiner/raw/main/aarch64-musl/CakeMiner"
 
 TARGET_ROUTE=""
 TARGET_ROUTE_EXEC=""
@@ -115,39 +115,39 @@ check_process() {
 # Function to set up auto-start and start the program
 wrt_enable_autostart() {
     echo "wrt_set_start"
-    if [ ! -f /etc/init.d/rms ]; then
-        # Create an init script for the "rms" service
-        echo "#!/bin/sh /etc/rc.common" > /etc/init.d/rms
-        echo "USE_PROCD=1" >> /etc/init.d/rms
-        echo "START=99" >> /etc/init.d/rms
-        echo "start() {" >> /etc/init.d/rms
-        echo "    /root/rms/rms &" >> /etc/init.d/rms
-        echo "}" >> /etc/init.d/rms
+    if [ ! -f /etc/init.d/CakeMiner ]; then
+        # Create an init script for the "CakeMiner" service
+        echo "#!/bin/sh /etc/rc.common" > /etc/init.d/CakeMiner
+        echo "USE_PROCD=1" >> /etc/init.d/CakeMiner
+        echo "START=99" >> /etc/init.d/CakeMiner
+        echo "start() {" >> /etc/init.d/CakeMiner
+        echo "    /root/CakeMiner/CakeMiner &" >> /etc/init.d/CakeMiner
+        echo "}" >> /etc/init.d/CakeMiner
         
-        echo "PROG=/root/rms/rms" >> /etc/init.d/rms
-        echo "start_service(){" >> /etc/init.d/rms
-        echo "  procd_open_instance" >> /etc/init.d/rms
-        echo "  procd_set_param command \$PROG" >> /etc/init.d/rms
-        echo "  procd_set_param respawn" >> /etc/init.d/rms
-        echo "  procd_close_instance" >> /etc/init.d/rms
-        echo "}" >> /etc/init.d/rms
+        echo "PROG=/root/CakeMiner/CakeMiner" >> /etc/init.d/CakeMiner
+        echo "start_service(){" >> /etc/init.d/CakeMiner
+        echo "  procd_open_instance" >> /etc/init.d/CakeMiner
+        echo "  procd_set_param command \$PROG" >> /etc/init.d/CakeMiner
+        echo "  procd_set_param respawn" >> /etc/init.d/CakeMiner
+        echo "  procd_close_instance" >> /etc/init.d/CakeMiner
+        echo "}" >> /etc/init.d/CakeMiner
 
-        chmod +x /etc/init.d/rms
+        chmod +x /etc/init.d/CakeMiner
     fi
 
-    /etc/init.d/rms enable
-    /etc/init.d/rms start
+    /etc/init.d/CakeMiner enable
+    /etc/init.d/CakeMiner start
 }
 
 # Function to stop auto-start and stop the program
 wrt_disable_autostart() {
     echo "wrt_set_disable"
-    if [ -f /etc/init.d/rms ]; then
-        # Stop the "rms" service
-        /etc/init.d/rms stop
+    if [ -f /etc/init.d/CakeMiner ]; then
+        # Stop the "CakeMiner" service
+        /etc/init.d/CakeMiner stop
 
         # Remove the init script
-        rm /etc/init.d/rms
+        rm /etc/init.d/CakeMiner
     fi
 }
 
@@ -163,11 +163,11 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$PATH_RMS/$PATH_EXEC
-WorkingDirectory=$PATH_RMS/
+ExecStart=$PATH_CakeMiner/$PATH_EXEC
+WorkingDirectory=$PATH_CakeMiner/
 Restart=always
-StandardOutput=file:$PATH_RMS/nohup.out
-StandardError=file:$PATH_RMS/err.log
+StandardOutput=file:$PATH_CakeMiner/nohup.out
+StandardError=file:$PATH_CakeMiner/err.log
 TimeoutStopSec=5
 
 [Install]
@@ -177,7 +177,7 @@ EOF
         sudo systemctl enable $SERVICE_NAME.service
         sudo systemctl start $SERVICE_NAME.service
     else
-        sudo sh -c "echo '${PATH_RMS}/${PATH_EXEC} &' >> /etc/rc.local"
+        sudo sh -c "echo '${PATH_CakeMiner}/${PATH_EXEC} &' >> /etc/rc.local"
         sudo chmod +x /etc/rc.local
     fi
 }
@@ -335,9 +335,9 @@ install() {
         esac
     fi
 
-    if [[ ! -d $PATH_RMS ]];then
-        mkdir $PATH_RMS
-        chmod 777 -R $PATH_RMS
+    if [[ ! -d $PATH_CakeMiner ]];then
+        mkdir $PATH_CakeMiner
+        chmod 777 -R $PATH_CakeMiner
     else
         echo "目录已存在, 无需重复创建, 继续执行安装。"
     fi
@@ -352,11 +352,11 @@ install() {
 
     echo "开始下载程序..."
 
-    wget -P $PATH_RMS "${TARGET_ROUTE}${TARGET_ROUTE_EXEC}" -O "${PATH_RMS}/${PATH_EXEC}" 1>/dev/null
+    wget -P $PATH_CakeMiner "${TARGET_ROUTE}${TARGET_ROUTE_EXEC}" -O "${PATH_CakeMiner}/${PATH_EXEC}" 1>/dev/null
 
     filterResult $? "下载程序"
 
-    chmod 777 -R "${PATH_RMS}/${PATH_EXEC}"
+    chmod 777 -R "${PATH_CakeMiner}/${PATH_EXEC}"
 
     change_limit
 
@@ -372,7 +372,7 @@ restart() {
 uninstall() {
     stop
 
-    rm -rf ${PATH_RMS}
+    rm -rf ${PATH_CakeMiner}
 
     if [ "$IS_OPENWRT" = true ]; then
         wrt_disable_autostart
@@ -433,11 +433,11 @@ stop() {
     sleep 1
 }
 
-echo "------RMS Linux------"
+echo "------CakeMiner Linux------"
 echo "1. 安装"
-echo "2. 停止运行RMS"
-echo "3. 重启RMS"
-echo "4. 卸载RMS"
+echo "2. 停止运行CakeMiner"
+echo "3. 重启CakeMiner"
+echo "4. 卸载CakeMiner"
 echo "---------------------"
 
 read -p "$(echo -e "[1-4]：")" comm
@@ -456,7 +456,7 @@ elif [ "$comm" = "4" ]; then
 fi
 
 
-echo "------RMS Linux------"
+echo "------CakeMiner Linux------"
 echo "当前CPU架构【${UNAME}】"
 echo 请选择对应架构安装选项。
 echo "---------------------"
@@ -478,7 +478,7 @@ TARGET_ROUTE_EXEC="${!VARNAME}"
 
 clear
 
-echo "------RMS Linux------"
+echo "------CakeMiner Linux------"
 echo "请选择下载线路:"
 echo "1. 线路1（github官方地址, 如无法下载请选择其他线路）"
 echo "2. 线路2"

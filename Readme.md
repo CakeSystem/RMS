@@ -1,4 +1,4 @@
-# RMS 使用指南
+# CakeMiner 使用指南
 
 <img src="/RMS.png" alt="Logo">
 
